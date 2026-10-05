@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wamn Tech | Enterprise Technology Solutions</title>
+    <meta name="description" content="Wamn Tech builds, upgrades, and maintains world-class digital infrastructure. High-performance application development and scalable enterprise solutions.">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Wamn Tech | Enterprise Technology Solutions">
+    <meta property="og:description" content="Architecting the systems that drive your business forward. Enterprise-grade software solutions and digital infrastructure.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wamntech.com">
+    <meta property="og:image" content="https://wamntech.com/icon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        /* NVIDIA-style vibrant green accent */
+                        'w-green': '#76B900',
+                        'w-dark': '#000000',
+                        'w-gray': '#1a1a1a',
+                        'w-light-gray': '#e0e0e0'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Roboto', 'Helvetica Neue', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #000000;
+            color: #e0e0e0;
+        }
+        .hero-bg {
+            /* Simulating a dark tech background - using a optimized Unsplash URL with compression settings */
+            background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(26,26,26,0.85) 100%), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop&q=60') center/cover no-repeat;
+        }
+        .card-hover:hover {
+            border-color: #76B900;
+            box-shadow: 0 4px 20px rgba(118, 185, 0, 0.15);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #76B900;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-w-green selection:text-black">
+    <div id="root"></div>
+    <!-- The following content will be handled by React -->
+    <div class="hidden">
+        <!-- Global Navigation -->
+    <nav class="fixed w-full z-50 bg-w-dark border-b border-gray-800 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold tracking-tighter text-white">
+                        WAMN<span class="text-w-green">TECH</span>
+                    </span>
+                </div>
+                <!-- Mega Menu Links -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#services" class="nav-link text-sm font-semibold text-gray-300 hover:text-white uppercase tracking-wider">Products & Services</a>
+                    <a href="#solutions" class="nav-link text-sm font-semibold text-gray-300 hover:text-white uppercase tracking-wider">Solutions</a>
+                    <a href="#industries" class="nav-link text-sm font-semibold text-gray-300 hover:text-white uppercase tracking-wider">Industries</a>
+                    <a href="#support" class="nav-link text-sm font-semibold text-gray-300 hover:text-white uppercase tracking-wider">Support</a>
+                </div>
+                <!-- Action Button -->
+                <div class="hidden md:flex">
+                    <a href="#contact" class="bg-w-green text-black font-bold text-sm px-5 py-2 rounded-sm hover:bg-green-400 transition-colors">GET STARTED</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-bg border-b border-gray-800">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+                    Powering the Future of <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-w-green to-green-200">Enterprise Technology</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
+                    Wamn Tech builds, upgrades, and maintains world-class digital infrastructure. From high-performance application development to scalable website solutions, we architect the systems that drive your business forward.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#services" class="bg-w-green text-black font-bold px-8 py-3 rounded-sm hover:bg-green-400 transition-colors text-center uppercase tracking-wide">
+                        Explore Solutions
+                    </a>
+                    <a href="#contact" class="border border-w-green text-w-green font-bold px-8 py-3 rounded-sm hover:bg-w-green hover:text-black transition-colors text-center uppercase tracking-wide">
+                        Contact Sales
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Capabilities Grid -->
+    <section id="services" class="py-24 bg-w-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Core Capabilities</h2>
+                <div class="w-20 h-1 bg-w-green"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- App Dev Card -->
+                <div class="bg-w-gray border border-gray-800 p-8 rounded-sm card-hover transition-all duration-300 group">
+                    <div class="h-12 w-12 text-w-green mb-6">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-w-green transition-colors">Application Development</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Custom backend systems, robust APIs, and scalable architecture designed for enterprise-grade performance and security.
+                    </p>
+                    <a href="#" class="text-w-green font-semibold text-sm hover:underline flex items-center uppercase tracking-wide">
+                        Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Web Dev Card -->
+                <div class="bg-w-gray border border-gray-800 p-8 rounded-sm card-hover transition-all duration-300 group">
+                    <div class="h-12 w-12 text-w-green mb-6">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-w-green transition-colors">Website Development</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        High-converting, visually striking frontends. We build dynamic digital storefronts optimized for speed and engagement.
+                    </p>
+                    <a href="#" class="text-w-green font-semibold text-sm hover:underline flex items-center uppercase tracking-wide">
+                        Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Upgrading & Maintenance Card -->
+                <div class="bg-w-gray border border-gray-800 p-8 rounded-sm card-hover transition-all duration-300 group">
+                    <div class="h-12 w-12 text-w-green mb-6">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-w-green transition-colors">Upgrades & Maintenance</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Continuous integration, legacy system modernization, and proactive maintenance to keep your tech stack ahead of the curve.
+                    </p>
+                    <a href="#" class="text-w-green font-semibold text-sm hover:underline flex items-center uppercase tracking-wide">
+                        Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Infrastructure / Data Section -->
+    <section class="py-20 bg-w-gray border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl font-bold text-white mb-8">Architecting Solutions Across the Modern Stack</h2>
+            <div class="flex flex-wrap justify-center gap-12 opacity-60">
+                <span class="text-xl font-bold text-gray-400 tracking-widest uppercase">Java</span>
+                <span class="text-xl font-bold text-gray-400 tracking-widest uppercase">Python</span>
+                <span class="text-xl font-bold text-gray-400 tracking-widest uppercase">PostgreSQL</span>
+                <span class="text-xl font-bold text-gray-400 tracking-widest uppercase">React</span>
+                <span class="text-xl font-bold text-gray-400 tracking-widest uppercase">Django</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-w-dark pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <span class="text-2xl font-bold tracking-tighter text-white block mb-4">
+                        WAMN<span class="text-w-green">TECH</span>
+                    </span>
+                    <p class="text-gray-500 text-sm">Empowering enterprises with cutting-edge software solutions and digital infrastructure.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Solutions</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-w-green transition-colors">Application Development</a></li>
+                        <li><a href="#" class="hover:text-w-green transition-colors">Website Architecture</a></li>
+                        <li><a href="#" class="hover:text-w-green transition-colors">System Upgrades</a></li>
+                        <li><a href="#" class="hover:text-w-green transition-colors">Cloud Deployments</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Company</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-w-green transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-w-green transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-w-green transition-colors">Newsroom</a></li>
+                        <li><a href="#" class="hover:text-w-green transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Subscribe</h4>
+                    <p class="text-gray-500 text-sm mb-4">Get the latest news and tech insights.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Email Address" class="bg-gray-900 border border-gray-700 text-white px-4 py-2 w-full focus:outline-none focus:border-w-green text-sm">
+                        <button class="bg-w-green text-black px-4 font-bold hover:bg-green-400 transition-colors">Go</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2026 Wamn Tech. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition-colors">Legal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+</body>
+</html>
