@@ -7,7 +7,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    filename: './js/app.js',
+    filename: 'js/app.js',
+    publicPath: './',
   },
   module: {
     rules: [
@@ -17,9 +18,16 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
+            presets: [
+              ['@babel/preset-env'],
+              ['@babel/preset-react', { runtime: 'automatic' }]
+            ],
           },
         },
+      },
+      {
+        test: /\.css$/i,
+        use: ['css-loader', 'postcss-loader'],
       },
     ],
   },

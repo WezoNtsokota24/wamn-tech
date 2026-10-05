@@ -1,6 +1,7 @@
 {
-  "name": " ",
-  "version": "0.0.1",
+  "name": "wamn-tech",
+  "version": "1.0.0",
+  "homepage": "https://WezoNtsokota24.github.io/wamn-tech",
   "description": "",
   "private": true,
   "keywords": [
@@ -11,15 +12,26 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open --config webpack.config.dev.js",
-    "build": "webpack --config webpack.config.prod.js"
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@babel/core": "^8.0.6",
     "@babel/preset-env": "^8.0.6",
     "@babel/preset-react": "^8.0.1",
+    "autoprefixer": "^10.6.1",
     "babel-loader": "^10.1.1",
     "copy-webpack-plugin": "^11.0.0",
+    "cross-env": "^10.1.0",
+    "css-loader": "^7.1.5",
+    "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.10.2",
+    "postcss": "^8.5.29",
+    "postcss-loader": "^8.2.1",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^3.4.19",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4",
