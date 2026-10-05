@@ -26,8 +26,11 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/i,
-        use: ['css-loader', 'postcss-loader'],
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'img/[name][ext]',
+        },
       },
     ],
   },
