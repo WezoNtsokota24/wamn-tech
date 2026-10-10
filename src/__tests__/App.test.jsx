@@ -7,6 +7,6 @@ test('renders Wamn Tech landing page without crashing', () => {
   // Navbar branding (using getAllByText because it appears multiple times)
   const branding = screen.getAllByText(/Wamn Tech/i);
   expect(branding.length).toBeGreaterThan(0);
-  // Hero section - match the actual text "Enterprise Technology"
-  expect(screen.getByText(/Enterprise Technology/i)).toBeInTheDocument();
+  // Hero section - match the new text content
+  expect(screen.getByText(/Wamn Tech builds, upgrades, and maintains world-class digital infrastructure/i)).toBeInTheDocument();
 });
