@@ -1,6 +1,6 @@
 import React from 'react';
 import backgroundVideo from '../assets/media/Abstract_glowing_neon_waves_1080p_20261010204749.mp4';
-import posterImg from '../assets/media/Digital_network_data_flowing_2K_20261010203407.jpg';
+import fallbackBg from '../assets/media/Digital_network_data_flowing_2K_20261010203407.jpg';
 
 const Hero = () => {
   return (
@@ -8,11 +8,11 @@ const Hero = () => {
       {/* Video Background */}
       <video
         src={backgroundVideo}
-        poster={posterImg}
-        autoPlay
-        loop
-        muted
-        playsInline
+        poster={fallbackBg}
+        autoPlay={true}
+        loop={true}
+        muted={true}
+        playsInline={true}
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
       {/* Dark Overlay */}
