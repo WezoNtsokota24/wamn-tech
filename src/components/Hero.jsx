@@ -10,12 +10,12 @@ const Hero = () => {
         loop
         muted
         playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+        className="absolute inset-0 w-full h-full object-cover -z-20"
       >
         <source src={backgroundVideo} type="video/mp4" />
       </video>
       {/* Dark Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/60 -z-10"></div>
+      <div className="absolute inset-0 bg-black/60 -z-10"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div className="max-w-3xl">

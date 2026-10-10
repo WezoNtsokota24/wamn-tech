@@ -8,8 +8,11 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <a href="#" className="flex items-center">
-              <img src={logo} alt="WAMN TECH Logo" className="h-12 w-auto" />
+            <a href="#" className="flex items-center group">
+              <img src={logo} alt="WAMN TECH Logo" className="h-16 md:h-20 w-auto transition-transform duration-300 group-hover:scale-105" />
+              <span className="text-xl md:text-2xl font-bold tracking-wider text-white hover:text-[#76B900] transition-colors duration-300 ml-3 md:ml-4">
+                WAMN <span className="text-[#76B900]">TECH</span>
+              </span>
             </a>
           </div>
           {/* Mega Menu Links */}
