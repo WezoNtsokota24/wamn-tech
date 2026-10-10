@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../assets/branding/WAMN TECH Logo.png';
 
 const Navbar = () => {
   return (
@@ -7,9 +8,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <span className="text-2xl font-bold tracking-tighter text-white">
-              WAMN<span className="text-w-green">TECH</span>
-            </span>
+            <a href="#" className="flex items-center">
+              <img src={logo} alt="WAMN TECH Logo" className="h-12 w-auto" />
+            </a>
           </div>
           {/* Mega Menu Links */}
           <div className="hidden md:flex space-x-8">
