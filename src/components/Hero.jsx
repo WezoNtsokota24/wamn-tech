@@ -6,14 +6,13 @@ const Hero = () => {
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden border-b border-gray-800">
       {/* Video Background */}
       <video
+        src={backgroundVideo}
         autoPlay
         loop
         muted
         playsInline
         className="absolute inset-0 w-full h-full object-cover -z-20"
-      >
-        <source src={backgroundVideo} type="video/mp4" />
-      </video>
+      />
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/60 -z-10"></div>
 
