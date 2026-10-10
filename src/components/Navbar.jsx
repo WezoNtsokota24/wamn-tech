@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/branding/WAMN TECH Logo.png';
+import logo from '../assets/branding/WAMN_TECH_Logo.png';
 
 const Navbar = () => {
   return (
