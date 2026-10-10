@@ -1,22 +1,24 @@
 import React from 'react';
 import backgroundVideo from '../assets/media/Abstract_glowing_neon_waves_1080p_20261010204749.mp4';
+import posterImg from '../assets/media/Digital_network_data_flowing_2K_20261010203407.jpg';
 
 const Hero = () => {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden border-b border-gray-800">
+    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden border-b border-gray-800 bg-transparent">
       {/* Video Background */}
       <video
         src={backgroundVideo}
+        poster={posterImg}
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover -z-20"
+        className="absolute inset-0 w-full h-full object-cover z-0"
       />
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60 -z-10"></div>
+      <div className="absolute inset-0 bg-black/60 z-10"></div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
             Architecting <br />
