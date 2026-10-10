@@ -544,14 +544,14 @@ video {
 .inset-0 {
   inset: 0px;
 }
-.-z-10 {
-  z-index: -10;
-}
-.-z-20 {
-  z-index: -20;
+.z-0 {
+  z-index: 0;
 }
 .z-10 {
   z-index: 10;
+}
+.z-20 {
+  z-index: 20;
 }
 .z-50 {
   z-index: 50;
@@ -780,6 +780,9 @@ video {
 }
 .bg-green-900\/30 {
   background-color: rgb(20 83 45 / 0.3);
+}
+.bg-transparent {
+  background-color: transparent;
 }
 .bg-w-dark {
   --tw-bg-opacity: 1;
