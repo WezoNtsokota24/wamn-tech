@@ -79,9 +79,9 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-w-dark border-t border-gray-800">
+    <section id="contact" className="py-24 bg-transparent border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto bg-black/60 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl">
           <div className="mb-16 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Get In Touch</h2>
             <div className="w-20 h-1 bg-w-green mx-auto"></div>
@@ -107,7 +107,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full bg-w-gray border border-gray-700 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-w-green focus:ring-1 focus:ring-w-green transition-all"
+                  className="w-full bg-white/[0.05] border border-white/10 text-white px-4 py-3 rounded-xl focus:outline-none focus:border-[#76B900] focus:ring-1 focus:ring-[#76B900] transition-all backdrop-blur-sm"
                   placeholder="John Doe"
                 />
               </div>
@@ -120,7 +120,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full bg-w-gray border border-gray-700 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-w-green focus:ring-1 focus:ring-w-green transition-all"
+                  className="w-full bg-white/[0.05] border border-white/10 text-white px-4 py-3 rounded-xl focus:outline-none focus:border-[#76B900] focus:ring-1 focus:ring-[#76B900] transition-all backdrop-blur-sm"
                   placeholder="john@example.com"
                 />
               </div>
@@ -136,7 +136,7 @@ const Contact = () => {
                   value={formData.company}
                   onChange={handleChange}
                   required
-                  className="w-full bg-w-gray border border-gray-700 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-w-green focus:ring-1 focus:ring-w-green transition-all"
+                  className="w-full bg-white/[0.05] border border-white/10 text-white px-4 py-3 rounded-xl focus:outline-none focus:border-[#76B900] focus:ring-1 focus:ring-[#76B900] transition-all backdrop-blur-sm"
                   placeholder="Your Company Name"
                 />
               </div>
@@ -149,7 +149,7 @@ const Contact = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full bg-w-gray border border-gray-700 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-w-green focus:ring-1 focus:ring-w-green transition-all"
+                  className="w-full bg-white/[0.05] border border-white/10 text-white px-4 py-3 rounded-xl focus:outline-none focus:border-[#76B900] focus:ring-1 focus:ring-[#76B900] transition-all backdrop-blur-sm"
                   placeholder="+27 00 000 0000"
                 />
               </div>
@@ -164,7 +164,7 @@ const Contact = () => {
                   value={formData.service}
                   onChange={handleChange}
                   required
-                  className="w-full bg-w-gray border border-gray-700 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-w-green focus:ring-1 focus:ring-w-green transition-all"
+                  className="w-full bg-white/[0.05] border border-white/10 text-white px-4 py-3 rounded-xl focus:outline-none focus:border-[#76B900] focus:ring-1 focus:ring-[#76B900] transition-all backdrop-blur-sm"
                 >
                   <option value="" disabled className="bg-[#1A1A1A] text-white">Select a service...</option>
                   <option value="Custom Software Development" className="bg-[#1A1A1A] text-white">Custom Software Development</option>
@@ -187,7 +187,7 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="w-full bg-w-gray border border-gray-700 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-w-green focus:ring-1 focus:ring-w-green transition-all resize-none"
+                className="w-full bg-white/[0.05] border border-white/10 text-white px-4 py-3 rounded-xl focus:outline-none focus:border-[#76B900] focus:ring-1 focus:ring-[#76B900] transition-all backdrop-blur-sm resize-none"
                 placeholder="Tell us about your project..."
               ></textarea>
             </div>
@@ -196,7 +196,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={status === 'submitting'}
-                className="w-full bg-w-green text-black font-bold py-4 rounded-sm hover:bg-green-400 transition-colors uppercase tracking-widest disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-[#76B900] text-black font-bold py-4 rounded-xl hover:bg-green-400 hover:shadow-[0_0_20px_rgba(118,185,0,0.4)] transition-all uppercase tracking-widest disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {status === 'submitting' ? 'Sending...' : 'Send Message'}
               </button>
