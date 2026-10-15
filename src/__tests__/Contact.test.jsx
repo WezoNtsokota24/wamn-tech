@@ -14,6 +14,7 @@ describe('Contact Component', () => {
     render(<Contact />);
     expect(screen.getByLabelText(/Name/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Email/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Phone \/ Contact Number/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Company/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Service Required/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Message/i)).toBeInTheDocument();
@@ -26,9 +27,12 @@ describe('Contact Component', () => {
     expect(select).toBeInTheDocument();
     expect(screen.getByText(/Select a service.../i)).toBeInTheDocument();
     expect(screen.getByText(/Custom Software Development/i)).toBeInTheDocument();
-    expect(screen.getByText(/Application Modernisation/i)).toBeInTheDocument();
-    expect(screen.getByText(/Solution Architecture/i)).toBeInTheDocument();
+    expect(screen.getByText(/Software Engineering Consulting/i)).toBeInTheDocument();
     expect(screen.getByText(/Team Augmentation/i)).toBeInTheDocument();
+    expect(screen.getByText(/Solution Architecture/i)).toBeInTheDocument();
+    expect(screen.getByText(/Application Modernisation/i)).toBeInTheDocument();
+    expect(screen.getByText(/Managed Software Delivery/i)).toBeInTheDocument();
+    expect(screen.getByText(/Careers \/ General Inquiry/i)).toBeInTheDocument();
   });
 
   test('submits form data and shows success message', async () => {
@@ -40,6 +44,7 @@ describe('Contact Component', () => {
 
     fireEvent.change(screen.getByLabelText(/Name/i), { target: { value: 'Test User' } });
     fireEvent.change(screen.getByLabelText(/Email/i), { target: { value: 'test@example.com' } });
+    fireEvent.change(screen.getByLabelText(/Phone \/ Contact Number/i), { target: { value: '+27 00 000 0000' } });
     fireEvent.change(screen.getByLabelText(/Company/i), { target: { value: 'Test Co' } });
     fireEvent.change(screen.getByLabelText(/Service Required/i), { target: { value: 'Custom Software Development' } });
     fireEvent.change(screen.getByLabelText(/Message/i), { target: { value: 'Hello world' } });
@@ -58,6 +63,7 @@ describe('Contact Component', () => {
         access_key: '72beb498-8fda-4cd8-b588-12fbe6992b09',
         name: 'Test User',
         email: 'test@example.com',
+        phone: '+27 00 000 0000',
         company: 'Test Co',
         service: 'Custom Software Development',
         message: 'Hello world'

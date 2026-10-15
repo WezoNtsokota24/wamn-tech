@@ -9,7 +9,9 @@ const Footer = () => {
             <span className="text-2xl font-bold tracking-tighter text-white block mb-4">
               WAMN<span className="text-w-green">TECH</span>
             </span>
-            <p className="text-gray-500 text-sm">Empowering enterprises with cutting-edge software solutions and digital infrastructure.</p>
+            <p className="text-gray-500 text-sm mb-4">Empowering enterprises with cutting-edge software solutions and digital infrastructure.</p>
+            <p className="text-gray-400 text-sm">Johannesburg, South Africa</p>
+            <p className="text-gray-400 text-sm">info@wamntech.com</p>
           </div>
           <div>
             <h4 className="text-white font-bold mb-4 uppercase text-sm tracking-wider">Solutions</h4>
@@ -44,11 +46,11 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-          <p>&copy; 2026 Wamn Tech. All rights reserved.</p>
+          <p>&copy; 2026 Wamn Technologies. All Rights Reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Legal</a>
+            <a href="#" className="hover:text-white transition-colors">Acceptable Use</a>
           </div>
         </div>
       </div>

@@ -1,15 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     company: '',
     service: '',
     message: ''
   });
 
   const [status, setStatus] = useState('idle'); // 'idle', 'submitting', 'success'
+
+  useEffect(() => {
+    const handlePrefill = (e) => {
+      const { service, message } = e.detail;
+      setFormData(prev => ({
+        ...prev,
+        service: service || prev.service,
+        message: message || prev.message
+      }));
+    };
+
+    window.addEventListener('prefillContact', handlePrefill);
+    return () => window.removeEventListener('prefillContact', handlePrefill);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,6 +58,7 @@ const Contact = () => {
         setFormData({
           name: '',
           email: '',
+          phone: '',
           company: '',
           service: '',
           message: ''
@@ -125,6 +141,22 @@ const Contact = () => {
                 />
               </div>
               <div>
+                <label htmlFor="phone" className="block text-sm font-semibold text-gray-300 uppercase tracking-wider mb-2">Phone / Contact Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-w-gray border border-gray-700 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-w-green focus:ring-1 focus:ring-w-green transition-all"
+                  placeholder="+27 00 000 0000"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
                 <label htmlFor="service" className="block text-sm font-semibold text-gray-300 uppercase tracking-wider mb-2">Service Required</label>
                 <select
                   id="service"
@@ -136,9 +168,12 @@ const Contact = () => {
                 >
                   <option value="" disabled className="bg-[#1A1A1A] text-white">Select a service...</option>
                   <option value="Custom Software Development" className="bg-[#1A1A1A] text-white">Custom Software Development</option>
-                  <option value="Application Modernisation" className="bg-[#1A1A1A] text-white">Application Modernisation</option>
-                  <option value="Solution Architecture" className="bg-[#1A1A1A] text-white">Solution Architecture</option>
+                  <option value="Software Engineering Consulting" className="bg-[#1A1A1A] text-white">Software Engineering Consulting</option>
                   <option value="Team Augmentation" className="bg-[#1A1A1A] text-white">Team Augmentation</option>
+                  <option value="Solution Architecture" className="bg-[#1A1A1A] text-white">Solution Architecture</option>
+                  <option value="Application Modernisation" className="bg-[#1A1A1A] text-white">Application Modernisation</option>
+                  <option value="Managed Software Delivery" className="bg-[#1A1A1A] text-white">Managed Software Delivery</option>
+                  <option value="Careers / General Inquiry" className="bg-[#1A1A1A] text-white">Careers / General Inquiry</option>
                 </select>
               </div>
             </div>
