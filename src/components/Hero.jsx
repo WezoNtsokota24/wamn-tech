@@ -25,7 +25,7 @@ const Hero = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-w-green to-green-200">Solutions</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
-            Wamn Tech builds, upgrades, and maintains world-class digital infrastructure. From high-performance application development to scalable website solutions, we architect the systems that drive your business forward.
+            We become subject matter experts in your business before we write a single line of code. Wamn Tech engineers bespoke software solutions built around your unique infrastructure to eliminate rework and drive scale.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="#services" className="bg-w-green text-black font-bold px-8 py-3 rounded-sm hover:bg-green-400 transition-colors text-center uppercase tracking-wide">

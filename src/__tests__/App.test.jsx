@@ -8,5 +8,5 @@ test('renders Wamn Tech landing page without crashing', () => {
   const branding = screen.getAllByText(/Wamn Tech/i);
   expect(branding.length).toBeGreaterThan(0);
   // Hero section - match the new text content
-  expect(screen.getByText(/Wamn Tech builds, upgrades, and maintains world-class digital infrastructure/i)).toBeInTheDocument();
+  expect(screen.getByText(/We become subject matter experts in your business before we write a single line of code/i)).toBeInTheDocument();
 });

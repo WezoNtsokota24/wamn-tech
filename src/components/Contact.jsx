@@ -5,6 +5,7 @@ const Contact = () => {
     name: '',
     email: '',
     company: '',
+    service: '',
     message: ''
   });
 
@@ -43,6 +44,7 @@ const Contact = () => {
           name: '',
           email: '',
           company: '',
+          service: '',
           message: ''
         });
 
@@ -108,18 +110,37 @@ const Contact = () => {
               </div>
             </div>
 
-            <div>
-              <label htmlFor="company" className="block text-sm font-semibold text-gray-300 uppercase tracking-wider mb-2">Company</label>
-              <input
-                type="text"
-                id="company"
-                name="company"
-                value={formData.company}
-                onChange={handleChange}
-                required
-                className="w-full bg-w-gray border border-gray-700 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-w-green focus:ring-1 focus:ring-w-green transition-all"
-                placeholder="Your Company Name"
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="company" className="block text-sm font-semibold text-gray-300 uppercase tracking-wider mb-2">Company</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-w-gray border border-gray-700 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-w-green focus:ring-1 focus:ring-w-green transition-all"
+                  placeholder="Your Company Name"
+                />
+              </div>
+              <div>
+                <label htmlFor="service" className="block text-sm font-semibold text-gray-300 uppercase tracking-wider mb-2">Service Required</label>
+                <select
+                  id="service"
+                  name="service"
+                  value={formData.service}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-w-gray border border-gray-700 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-w-green focus:ring-1 focus:ring-w-green transition-all"
+                >
+                  <option value="" disabled className="bg-[#1A1A1A] text-white">Select a service...</option>
+                  <option value="Custom Software Development" className="bg-[#1A1A1A] text-white">Custom Software Development</option>
+                  <option value="Application Modernisation" className="bg-[#1A1A1A] text-white">Application Modernisation</option>
+                  <option value="Solution Architecture" className="bg-[#1A1A1A] text-white">Solution Architecture</option>
+                  <option value="Team Augmentation" className="bg-[#1A1A1A] text-white">Team Augmentation</option>
+                </select>
+              </div>
             </div>
 
             <div>

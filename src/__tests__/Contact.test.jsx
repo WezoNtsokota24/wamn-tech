@@ -15,8 +15,20 @@ describe('Contact Component', () => {
     expect(screen.getByLabelText(/Name/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Email/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Company/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Service Required/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Message/i)).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Send Message/i })).toBeInTheDocument();
+  });
+
+  test('renders all service options', () => {
+    render(<Contact />);
+    const select = screen.getByLabelText(/Service Required/i);
+    expect(select).toBeInTheDocument();
+    expect(screen.getByText(/Select a service.../i)).toBeInTheDocument();
+    expect(screen.getByText(/Custom Software Development/i)).toBeInTheDocument();
+    expect(screen.getByText(/Application Modernisation/i)).toBeInTheDocument();
+    expect(screen.getByText(/Solution Architecture/i)).toBeInTheDocument();
+    expect(screen.getByText(/Team Augmentation/i)).toBeInTheDocument();
   });
 
   test('submits form data and shows success message', async () => {
@@ -29,6 +41,7 @@ describe('Contact Component', () => {
     fireEvent.change(screen.getByLabelText(/Name/i), { target: { value: 'Test User' } });
     fireEvent.change(screen.getByLabelText(/Email/i), { target: { value: 'test@example.com' } });
     fireEvent.change(screen.getByLabelText(/Company/i), { target: { value: 'Test Co' } });
+    fireEvent.change(screen.getByLabelText(/Service Required/i), { target: { value: 'Custom Software Development' } });
     fireEvent.change(screen.getByLabelText(/Message/i), { target: { value: 'Hello world' } });
 
     fireEvent.click(screen.getByRole('button', { name: /Send Message/i }));
@@ -46,6 +59,7 @@ describe('Contact Component', () => {
         name: 'Test User',
         email: 'test@example.com',
         company: 'Test Co',
+        service: 'Custom Software Development',
         message: 'Hello world'
       })
     }));

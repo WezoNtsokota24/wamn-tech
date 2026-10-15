@@ -9,6 +9,12 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+      actions: write
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -28,8 +34,27 @@ jobs:
       - name: Build Production Bundle
         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Purge Old Build Artifacts
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Checking for existing artifacts to free up storage quota..."
+          ARTIFACT_IDS=$(gh api repos/${{ github.repository }}/actions/artifacts --paginate -q '.artifacts[].id')
+          if [ -n "$ARTIFACT_IDS" ]; then
+            for id in $ARTIFACT_IDS; do
+              echo "Deleting artifact ID: $id"
+              gh api -X DELETE repos/${{ github.repository }}/actions/artifacts/$id || true
+            done
+          else
+            echo "No old artifacts found."
+          fi
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          path: ./dist
+          retention-days: 1
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

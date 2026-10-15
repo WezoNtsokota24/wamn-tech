@@ -3,6 +3,45 @@ import microchipImg from '../assets/media/Microchip_pulsing_with_green_energy_2K
 import serverRacksImg from '../assets/media/Server_racks_in_data_center_2K_20261010204306.jpg';
 
 const Services = () => {
+  const services = [
+    {
+      title: "Custom Software Development",
+      description: "Designing and building bespoke systems that work specifically for your business processes.",
+      icon: (
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+        </svg>
+      )
+    },
+    {
+      title: "Application Modernisation",
+      description: "Code rewrites and system upgrades to bring legacy applications into the modern cloud era.",
+      icon: (
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+        </svg>
+      )
+    },
+    {
+      title: "Solution Architecture",
+      description: "Designing robust, scalable infrastructures that seamlessly integrate with your current tech stack.",
+      icon: (
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        </svg>
+      )
+    },
+    {
+      title: "Team Augmentation",
+      description: "Providing elite software engineering talent to integrate with and accelerate your internal delivery teams.",
+      icon: (
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+        </svg>
+      )
+    }
+  ];
+
   return (
     <>
       {/* Core Capabilities Grid */}
@@ -13,23 +52,15 @@ const Services = () => {
             <div className="w-20 h-1 bg-w-green"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            {/* Software Development Card */}
-            <div className="bg-w-gray border border-gray-800 rounded-sm card-hover transition-all duration-300 group overflow-hidden">
-              <div className="h-48 overflow-hidden relative">
-                <img src={microchipImg} alt="Software Development" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-w-gray to-transparent"></div>
-              </div>
-              <div className="p-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((service, index) => (
+              <div key={index} className="bg-w-gray border border-gray-800 p-8 rounded-sm card-hover transition-all duration-300 group">
                 <div className="h-12 w-12 text-w-green mb-6">
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                  </svg>
+                  {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-w-green transition-colors">Software Development</h3>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-w-green transition-colors">{service.title}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                  Expertly crafted React and Django applications, designed for enterprise-grade performance, scalability, and security.
+                  {service.description}
                 </p>
                 <a href="#" className="text-w-green font-semibold text-sm hover:underline flex items-center uppercase tracking-wide">
                   Learn More <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -37,49 +68,7 @@ const Services = () => {
                   </svg>
                 </a>
               </div>
-            </div>
-
-            {/* Infrastructure Card */}
-            <div className="bg-w-gray border border-gray-800 rounded-sm card-hover transition-all duration-300 group overflow-hidden">
-              <div className="h-48 overflow-hidden relative">
-                <img src={serverRacksImg} alt="Infrastructure / PostgreSQL" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-w-gray to-transparent"></div>
-              </div>
-              <div className="p-8">
-                <div className="h-12 w-12 text-w-green mb-6">
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-w-green transition-colors">Infrastructure / PostgreSQL</h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                  Robust database management and scalable infrastructure solutions that ensure your data is always accessible and secure.
-                </p>
-                <a href="#" className="text-w-green font-semibold text-sm hover:underline flex items-center uppercase tracking-wide">
-                  Learn More <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            {/* Upgrading & Maintenance Card */}
-            <div className="bg-w-gray border border-gray-800 p-8 rounded-sm card-hover transition-all duration-300 group">
-              <div className="h-12 w-12 text-w-green mb-6">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-w-green transition-colors">Upgrades & Maintenance</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                Continuous integration, legacy system modernization, and proactive maintenance to keep your tech stack ahead of the curve.
-              </p>
-              <a href="#" className="text-w-green font-semibold text-sm hover:underline flex items-center uppercase tracking-wide">
-                Learn More <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </a>
-            </div>
+            ))}
           </div>
         </div>
       </section>
