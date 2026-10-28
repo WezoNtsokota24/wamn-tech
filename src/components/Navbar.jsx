@@ -41,7 +41,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop navigation links inside a frosted pill container */}
-          <div className="flex md:flex items-center bg-white/[0.03] border border-white/10 rounded-full px-6 py-2 backdrop-blur-md space-x-6 relative z-50">
+          <div className="hidden md:flex items-center bg-white/[0.03] border border-white/10 rounded-full px-6 py-2 backdrop-blur-md space-x-6 relative z-50">
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
@@ -64,7 +64,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="flex md:flex items-center space-x-6 text-white relative z-50">
+          <div className="hidden md:flex items-center space-x-6 text-white relative z-50">
             <Link
               to="/portal"
               className="text-xs font-bold text-white border border-white/20 px-4 py-2 rounded-lg backdrop-blur-md transition-all duration-300 hover:border-[#76B900]/50 hover:bg-white/5"
@@ -94,17 +94,17 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown Drawer */}
-      <div className={`md:hidden transition-all duration-300 overflow-hidden ${mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-        <div className="px-4 pt-2 pb-6 space-y-2 bg-[#0a0a0a]/90 backdrop-blur-2xl border-b border-white/10">
+      {/* Mobile Overlay (Glassmorphism) */}
+      {mobileMenuOpen && (
+        <div className="fixed top-[70px] left-0 w-full h-screen bg-black/95 backdrop-blur-2xl z-40 flex flex-col items-center pt-12 gap-8 md:hidden">
           {navLinks.map((link) => (
             <NavLink
               key={link.name}
               to={link.href}
               onClick={() => setMobileMenuOpen(false)}
               className={({ isActive }) =>
-                `block px-3 py-3 text-base font-medium rounded-lg transition-colors ${
-                  isActive ? 'text-[#76B900] bg-white/5' : 'text-gray-300 hover:text-[#76B900] hover:bg-white/5'
+                `text-xl font-semibold uppercase tracking-widest transition-colors duration-300 ${
+                  isActive ? 'text-[#76B900]' : 'text-white hover:text-[#76B900]'
                 }`
               }
             >
@@ -114,19 +114,19 @@ const Navbar = () => {
           <Link
             to="/portal"
             onClick={() => setMobileMenuOpen(false)}
-            className="block w-full text-center text-gray-400 font-bold py-3 border border-white/10 rounded-lg mt-4 hover:text-white hover:border-[#76B900]/50 transition-all"
+            className="text-lg font-bold text-white border border-white/20 px-8 py-3 rounded-lg backdrop-blur-md transition-all duration-300 hover:border-[#76B900]/50 hover:bg-white/5"
           >
             CLIENT LOGIN
           </Link>
           <Link
             to="/contact"
             onClick={() => setMobileMenuOpen(false)}
-            className="block w-full text-center bg-[#76B900] text-black font-bold py-3 rounded-lg mt-2"
+            className="bg-[#76B900] text-black font-bold text-lg px-10 py-3 rounded-full hover:bg-green-400 transition-all duration-300"
           >
             GET STARTED
           </Link>
         </div>
-      </div>
+      )}
     </nav>
   );
 };

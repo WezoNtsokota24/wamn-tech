@@ -21,7 +21,7 @@ const Hero = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20">
         <div className="max-w-3xl bg-black/40 backdrop-blur-md border border-white/10 rounded-3xl p-8 md:p-12 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
             Architecting <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-w-green to-green-200">Solutions</span>
           </h1>

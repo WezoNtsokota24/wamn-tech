@@ -14,11 +14,11 @@ const Partners = () => {
         <h2 className="text-center text-gray-400 tracking-widest text-sm mb-6 uppercase">
           TRUSTED BY INNOVATIVE BRANDS & INSTITUTIONS
         </h2>
-        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-24">
           {partners.map((partner) => (
             <span
               key={partner}
-              className="text-white/40 text-xl md:text-2xl font-bold font-sans uppercase transition-all duration-300 cursor-default hover:text-[#76B900] hover:drop-shadow-[0_0_8px_rgba(118,185,0,0.8)]"
+              className="text-white/40 text-sm md:text-2xl font-bold font-sans uppercase transition-all duration-300 cursor-default hover:text-[#76B900] hover:drop-shadow-[0_0_8px_rgba(118,185,0,0.8)]"
             >
               {partner}
             </span>
