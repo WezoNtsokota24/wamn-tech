@@ -23,13 +23,13 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${
       isScrolled
-        ? 'bg-[#0a0a0a]/75 backdrop-blur-xl border-b border-[#76B900]/30 shadow-[0_8px_30px_rgb(0,0,0,0.6)] py-3'
-        : 'bg-black/30 backdrop-blur-md border-b border-white/5 py-4'
+        ? 'bg-[#0a0a0a]/80 backdrop-blur-xl border-b border-[#76B900]/30 shadow-[0_8px_30px_rgb(0,0,0,0.6)] py-3'
+        : 'bg-black/40 backdrop-blur-md border-b border-white/5 py-4'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="flex justify-between items-center w-full h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center group">
@@ -64,11 +64,10 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Action Button (Desktop) */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-6 text-white">
             <Link
               to="/portal"
-              className="text-xs font-bold text-gray-400 hover:text-white border border-white/10 px-4 py-2 rounded-lg backdrop-blur-md transition-all duration-300 hover:border-[#76B900]/50"
+              className="text-xs font-bold text-gray-300 hover:text-white border border-white/20 px-4 py-2 rounded-lg backdrop-blur-md transition-all duration-300 hover:border-[#76B900]/50 hover:bg-white/5"
             >
               CLIENT LOGIN
             </Link>
