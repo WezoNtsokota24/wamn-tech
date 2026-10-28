@@ -41,7 +41,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop navigation links inside a frosted pill container */}
-          <div className="hidden md:flex items-center bg-white/[0.03] border border-white/10 rounded-full px-6 py-2 backdrop-blur-md space-x-6 relative z-50">
+          <div className="hidden md:flex items-center bg-white/[0.03] border border-white/10 rounded-full px-6 py-2 backdrop-blur-md gap-6 relative z-50">
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
@@ -77,7 +77,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          <div className="flex md:hidden items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-white p-2 focus:outline-none"
