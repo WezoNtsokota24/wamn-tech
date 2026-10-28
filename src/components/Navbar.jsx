@@ -41,14 +41,14 @@ const Navbar = () => {
           </div>
 
           {/* Desktop navigation links inside a frosted pill container */}
-          <div className="hidden md:flex items-center bg-white/[0.03] border border-white/10 rounded-full px-6 py-2 backdrop-blur-md space-x-6">
+          <div className="flex md:flex items-center bg-white/[0.03] border border-white/10 rounded-full px-6 py-2 backdrop-blur-md space-x-6 relative z-50">
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
                 to={link.href}
                 className={({ isActive }) =>
                   `relative text-sm font-semibold uppercase tracking-wider transition-colors duration-300 group ${
-                    isActive ? 'text-[#76B900]' : 'text-gray-300 hover:text-white'
+                    isActive ? 'text-[#76B900]' : 'text-white hover:text-[#76B900]'
                   }`
                 }
               >
@@ -64,10 +64,10 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center space-x-6 text-white">
+          <div className="flex md:flex items-center space-x-6 text-white relative z-50">
             <Link
               to="/portal"
-              className="text-xs font-bold text-gray-300 hover:text-white border border-white/20 px-4 py-2 rounded-lg backdrop-blur-md transition-all duration-300 hover:border-[#76B900]/50 hover:bg-white/5"
+              className="text-xs font-bold text-white border border-white/20 px-4 py-2 rounded-lg backdrop-blur-md transition-all duration-300 hover:border-[#76B900]/50 hover:bg-white/5"
             >
               CLIENT LOGIN
             </Link>
