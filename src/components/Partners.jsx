@@ -18,7 +18,7 @@ const Partners = () => {
           {partners.map((partner) => (
             <span
               key={partner}
-              className="text-white/40 text-xl md:text-2xl font-bold font-sans transition-all duration-300 cursor-default hover:text-[#76B900] hover:drop-shadow-[0_0_8px_rgba(118,185,0,0.8)]"
+              className="text-white/40 text-xl md:text-2xl font-bold font-sans uppercase transition-all duration-300 cursor-default hover:text-[#76B900] hover:drop-shadow-[0_0_8px_rgba(118,185,0,0.8)]"
             >
               {partner}
             </span>
