@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import backgroundVideo from '../assets/media/Abstract_glowing_neon_waves_1080p_20261010204749.mp4';
 import fallbackBg from '../assets/media/Digital_network_data_flowing_2K_20261010203407.jpg';
 
@@ -28,12 +29,12 @@ const Hero = () => {
             We become subject matter experts in your business before we write a single line of code. Wamn Tech engineers bespoke software solutions built around your unique infrastructure to eliminate rework and drive scale.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="#services" className="bg-w-green text-black font-bold px-8 py-3 rounded-full hover:bg-green-400 hover:shadow-[0_0_20px_rgba(118,185,0,0.4)] transition-all text-center uppercase tracking-wide">
+            <Link to="/services" className="bg-w-green text-black font-bold px-8 py-3 rounded-full hover:bg-green-400 hover:shadow-[0_0_20px_rgba(118,185,0,0.4)] transition-all text-center uppercase tracking-wide">
               Explore Solutions
-            </a>
-            <a href="#contact" className="border border-w-green text-w-green font-bold px-8 py-3 rounded-full hover:bg-w-green hover:text-black transition-all text-center uppercase tracking-wide">
+            </Link>
+            <Link to="/contact" className="border border-w-green text-w-green font-bold px-8 py-3 rounded-full hover:bg-w-green hover:text-black transition-all text-center uppercase tracking-wide">
               Contact Sales
-            </a>
+            </Link>
           </div>
         </div>
       </div>

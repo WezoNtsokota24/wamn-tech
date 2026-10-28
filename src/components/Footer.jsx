@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -6,9 +7,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-1">
-            <span className="text-2xl font-bold tracking-tighter text-white block mb-4">
+            <Link to="/" className="text-2xl font-bold tracking-tighter text-white block mb-4">
               WAMN<span className="text-[#76B900]">TECH</span>
-            </span>
+            </Link>
             <p className="text-gray-500 text-sm mb-4 leading-relaxed">Empowering enterprises with cutting-edge software solutions and digital infrastructure.</p>
             <p className="text-gray-400 text-sm">Johannesburg, South Africa</p>
             <p className="text-gray-400 text-sm">info@wamntech.com</p>
@@ -16,19 +17,19 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-bold mb-6 uppercase text-sm tracking-widest">Solutions</h4>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li><a href="#services" className="hover:text-[#76B900] transition-colors">Application Development</a></li>
-              <li><a href="#services" className="hover:text-[#76B900] transition-colors">Website Architecture</a></li>
-              <li><a href="#services" className="hover:text-[#76B900] transition-colors">System Upgrades</a></li>
-              <li><a href="#services" className="hover:text-[#76B900] transition-colors">Cloud Deployments</a></li>
+              <li><Link to="/services" className="hover:text-[#76B900] transition-colors">Application Development</Link></li>
+              <li><Link to="/services" className="hover:text-[#76B900] transition-colors">Website Architecture</Link></li>
+              <li><Link to="/services" className="hover:text-[#76B900] transition-colors">System Upgrades</Link></li>
+              <li><Link to="/services" className="hover:text-[#76B900] transition-colors">Cloud Deployments</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="text-white font-bold mb-6 uppercase text-sm tracking-widest">Company</h4>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li><a href="#" className="hover:text-[#76B900] transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-[#76B900] transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-[#76B900] transition-colors">Newsroom</a></li>
-              <li><a href="#contact" className="hover:text-[#76B900] transition-colors">Contact</a></li>
+              <li><Link to="/company" className="hover:text-[#76B900] transition-colors">About Us</Link></li>
+              <li><Link to="/company" className="hover:text-[#76B900] transition-colors">Careers</Link></li>
+              <li><Link to="/company" className="hover:text-[#76B900] transition-colors">Newsroom</Link></li>
+              <li><Link to="/contact" className="hover:text-[#76B900] transition-colors">Contact</Link></li>
             </ul>
           </div>
           <div>

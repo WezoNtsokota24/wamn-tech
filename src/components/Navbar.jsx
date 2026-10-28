@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/branding/WAMN_TECH_Logo.png';
 
 const Navbar = () => {
@@ -14,12 +15,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Solutions', href: '#services' },
-    { name: 'Process', href: '#process' },
-    { name: 'Tech Stack', href: '#tech-stack' },
-    { name: 'Estimator', href: '#estimator' },
-    { name: 'Leadership', href: '#team' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: '/' },
+    { name: 'Solutions', href: '/services' },
+    { name: 'Process', href: '/methodology' },
+    { name: 'Leadership', href: '/company' },
+    { name: 'Contact', href: '/contact' }
   ];
 
   return (
@@ -32,33 +32,49 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <a href="#" className="flex items-center group">
+            <Link to="/" className="flex items-center group">
               <img src={logo} alt="WAMN TECH Logo" className="h-14 md:h-16 w-auto transition-transform duration-300 group-hover:scale-105" />
               <span className="text-xl md:text-2xl font-bold tracking-wider text-white ml-3 md:ml-4">
                 WAMN <span className="text-[#76B900]">TECH</span>
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop navigation links inside a frosted pill container */}
           <div className="hidden md:flex items-center bg-white/[0.03] border border-white/10 rounded-full px-6 py-2 backdrop-blur-md space-x-6">
             {navLinks.map((link) => (
-              <a
+              <NavLink
                 key={link.name}
-                href={link.href}
-                className="relative text-sm font-semibold text-gray-300 hover:text-white uppercase tracking-wider transition-colors duration-300 group"
+                to={link.href}
+                className={({ isActive }) =>
+                  `relative text-sm font-semibold uppercase tracking-wider transition-colors duration-300 group ${
+                    isActive ? 'text-[#76B900]' : 'text-gray-300 hover:text-white'
+                  }`
+                }
               >
-                {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#76B900] transition-all duration-300 group-hover:w-full"></span>
-              </a>
+                {({ isActive }) => (
+                  <>
+                    {link.name}
+                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-[#76B900] transition-all duration-300 ${
+                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}></span>
+                  </>
+                )}
+              </NavLink>
             ))}
           </div>
 
           {/* Action Button (Desktop) */}
-          <div className="hidden md:flex">
-            <a href="#contact" className="bg-[#76B900] text-black font-bold text-sm px-6 py-2 rounded-full hover:bg-green-400 hover:shadow-[0_0_20px_rgba(118,185,0,0.4)] transition-all duration-300">
+          <div className="hidden md:flex items-center space-x-4">
+            <Link
+              to="/portal"
+              className="text-xs font-bold text-gray-400 hover:text-white border border-white/10 px-4 py-2 rounded-lg backdrop-blur-md transition-all duration-300 hover:border-[#76B900]/50"
+            >
+              CLIENT LOGIN
+            </Link>
+            <Link to="/contact" className="bg-[#76B900] text-black font-bold text-sm px-6 py-2 rounded-full hover:bg-green-400 hover:shadow-[0_0_20px_rgba(118,185,0,0.4)] transition-all duration-300">
               GET STARTED
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -83,22 +99,33 @@ const Navbar = () => {
       <div className={`md:hidden transition-all duration-300 overflow-hidden ${mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
         <div className="px-4 pt-2 pb-6 space-y-2 bg-[#0a0a0a]/90 backdrop-blur-2xl border-b border-white/10">
           {navLinks.map((link) => (
-            <a
+            <NavLink
               key={link.name}
-              href={link.href}
+              to={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-3 text-base font-medium text-gray-300 hover:text-[#76B900] hover:bg-white/5 rounded-lg transition-colors"
+              className={({ isActive }) =>
+                `block px-3 py-3 text-base font-medium rounded-lg transition-colors ${
+                  isActive ? 'text-[#76B900] bg-white/5' : 'text-gray-300 hover:text-[#76B900] hover:bg-white/5'
+                }`
+              }
             >
               {link.name}
-            </a>
+            </NavLink>
           ))}
-          <a
-            href="#contact"
+          <Link
+            to="/portal"
             onClick={() => setMobileMenuOpen(false)}
-            className="block w-full text-center bg-[#76B900] text-black font-bold py-3 rounded-lg mt-4"
+            className="block w-full text-center text-gray-400 font-bold py-3 border border-white/10 rounded-lg mt-4 hover:text-white hover:border-[#76B900]/50 transition-all"
+          >
+            CLIENT LOGIN
+          </Link>
+          <Link
+            to="/contact"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block w-full text-center bg-[#76B900] text-black font-bold py-3 rounded-lg mt-2"
           >
             GET STARTED
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
