@@ -27,10 +27,11 @@ const Navbar = () => {
       {/* Logo Container */}
       <div className="flex items-center">
         <Link to="/" className="flex items-center group">
-          <img src={logo} alt="WAMN TECH Logo" className="h-20 md:h-24 w-auto transition-transform duration-300 group-hover:scale-105" />
-          <span className="text-2xl md:text-4xl font-bold tracking-wider text-white ml-3 md:ml-4">
-            WAMN <span className="text-w-green">TECH</span>
-          </span>
+          <img
+            src={logo}
+            alt="WAMN TECH Logo"
+            className="h-20 md:h-24 lg:h-28 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          />
         </Link>
       </div>
 
