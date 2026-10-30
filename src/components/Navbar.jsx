@@ -23,12 +23,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-[999] flex justify-between items-center px-6 py-4 bg-black/80 backdrop-blur-md border-b border-white/10">
+    <nav className="fixed top-0 left-0 w-full z-[999] flex justify-between items-center px-6 py-4 bg-black border-b border-white/10">
       {/* Logo Container */}
       <div className="flex items-center">
         <Link to="/" className="flex items-center group">
-          <img src={logo} alt="WAMN TECH Logo" className="h-14 md:h-16 w-auto transition-transform duration-300 group-hover:scale-105" />
-          <span className="text-xl md:text-2xl font-bold tracking-wider text-white ml-3 md:ml-4">
+          <img src={logo} alt="WAMN TECH Logo" className="h-20 md:h-24 w-auto transition-transform duration-300 group-hover:scale-105" />
+          <span className="text-2xl md:text-4xl font-bold tracking-wider text-white ml-3 md:ml-4">
             WAMN <span className="text-w-green">TECH</span>
           </span>
         </Link>
