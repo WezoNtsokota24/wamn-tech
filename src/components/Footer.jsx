@@ -41,7 +41,7 @@ const Footer = () => {
                 placeholder="Email Address"
                 className="bg-transparent border-none text-white px-4 py-3 w-full focus:outline-none text-sm placeholder-gray-500"
               />
-              <button className="bg-[#76B900] text-black px-6 font-bold hover:bg-green-400 transition-colors uppercase text-xs tracking-widest">Go</button>
+              <button className="bg-w-green text-black px-6 font-bold hover:bg-white hover:text-black transition-colors uppercase text-xs tracking-widest">Go</button>
             </div>
           </div>
         </div>

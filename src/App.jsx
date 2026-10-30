@@ -12,10 +12,10 @@ import ClientPortal from './pages/ClientPortal';
 const App = () => {
   return (
     <Router>
-      <div className="antialiased selection:bg-[#76B900] selection:text-black bg-[#050505] text-gray-200 font-sans min-h-screen relative overflow-x-hidden">
+      <div className="antialiased selection:bg-w-green selection:text-black bg-[#050505] text-gray-200 font-sans min-h-screen relative overflow-x-hidden">
         {/* Ambient Background Glows */}
-        <div className="fixed top-0 left-0 w-[500px] h-[500px] bg-[#76B900]/5 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"></div>
-        <div className="fixed bottom-0 right-0 w-[500px] h-[500px] bg-[#76B900]/5 blur-[120px] rounded-full translate-x-1/2 translate-y-1/2 pointer-events-none z-0"></div>
+        <div className="fixed top-0 left-0 w-[500px] h-[500px] bg-w-green/5 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"></div>
+        <div className="fixed bottom-0 right-0 w-[500px] h-[500px] bg-w-green/5 blur-[120px] rounded-full translate-x-1/2 translate-y-1/2 pointer-events-none z-0"></div>
 
         <div className="relative z-10 flex flex-col min-h-screen">
           <Navbar />
