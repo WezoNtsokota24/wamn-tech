@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'desktop': '768px',
+      },
       colors: {
         'w-green': '#76B900',
         'w-dark': '#000000',

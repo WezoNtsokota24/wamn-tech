@@ -23,11 +23,11 @@ const Process = () => {
     <section id="process" className="py-24 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Process</h2>
+          <h2 className="text-3xl desktop:text-4xl font-bold text-white mb-4">Our Process</h2>
           <div className="w-20 h-1 bg-w-green"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+        <div className="grid grid-cols-1 desktop:grid-cols-3 gap-8 mb-24">
           {steps.map((step, index) => (
             <div key={index} className="bg-white/[0.02] backdrop-blur-lg border border-white/10 hover:border-[#76B900]/50 rounded-2xl p-8 transition-all duration-300 shadow-xl group">
               <div className="text-5xl font-extrabold text-[#76B900]/20 mb-6 group-hover:text-[#76B900]/40 transition-colors duration-300">{step.number}</div>
