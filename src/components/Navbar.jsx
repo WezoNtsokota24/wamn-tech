@@ -35,7 +35,7 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <div className="hidden desktop:flex items-center gap-8">
+      <div className="hidden desktop:!flex items-center gap-8">
         {navLinks.map((link) => (
           <NavLink
             key={link.name}
@@ -59,7 +59,7 @@ const Navbar = () => {
       </div>
 
       {/* Desktop CTA / Login Button */}
-      <div className="hidden desktop:flex items-center gap-6">
+      <div className="hidden desktop:!flex items-center gap-6">
         <Link
           to="/portal"
           className="text-xs font-bold text-white border border-white/20 px-4 py-2 rounded-lg backdrop-blur-md transition-all duration-300 hover:border-w-green/50 hover:bg-white/5"
@@ -72,7 +72,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Hamburger Button */}
-      <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="flex desktop:hidden text-white">
+      <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="flex desktop:!hidden text-white">
         <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           {mobileMenuOpen ? (
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
@@ -84,7 +84,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed top-[70px] left-0 w-full h-screen bg-black/95 backdrop-blur-2xl z-[990] flex flex-col items-center pt-12 gap-8 desktop:hidden">
+        <div className="fixed top-[70px] left-0 w-full h-screen bg-black/95 backdrop-blur-2xl z-[990] flex flex-col items-center pt-12 gap-8 desktop:!hidden">
           {navLinks.map((link) => (
             <NavLink
               key={link.name}

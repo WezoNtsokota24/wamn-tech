@@ -27,7 +27,7 @@ const Process = () => {
           <div className="w-20 h-1 bg-w-green"></div>
         </div>
 
-        <div className="grid grid-cols-1 desktop:grid-cols-3 gap-8 mb-24">
+        <div className="grid grid-cols-1 desktop:!grid-cols-3 gap-8 mb-24">
           {steps.map((step, index) => (
             <div key={index} className="bg-white/[0.02] backdrop-blur-lg border border-white/10 hover:border-[#76B900]/50 rounded-2xl p-8 transition-all duration-300 shadow-xl group">
               <div className="text-5xl font-extrabold text-[#76B900]/20 mb-6 group-hover:text-[#76B900]/40 transition-colors duration-300">{step.number}</div>

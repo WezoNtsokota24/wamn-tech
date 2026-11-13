@@ -22,25 +22,25 @@ describe('Navbar Responsive Classes', () => {
     // In Navbar.jsx, the desktop links are in a div with className="hidden desktop:flex items-center gap-8"
     // We can find it by looking for the container that contains the nav links
     const solutionsLink = screen.getByText(/Solutions/i);
-    const desktopContainer = solutionsLink.closest('.desktop\\:flex');
+    const desktopContainer = solutionsLink.closest('.desktop\\:\\!flex');
 
     expect(desktopContainer).toBeInTheDocument();
     expect(desktopContainer).toHaveClass('hidden');
-    expect(desktopContainer).toHaveClass('desktop:flex');
+    expect(desktopContainer).toHaveClass('desktop:!flex');
 
     // 2. Check Desktop CTA Container
     // There's another container for CLIENT LOGIN and GET STARTED: className="hidden desktop:flex items-center gap-6"
     const clientLoginLink = screen.getByText(/CLIENT LOGIN/i);
-    const ctaContainer = clientLoginLink.closest('.desktop\\:flex');
+    const ctaContainer = clientLoginLink.closest('.desktop\\:\\!flex');
 
     expect(ctaContainer).toBeInTheDocument();
     expect(ctaContainer).toHaveClass('hidden');
-    expect(ctaContainer).toHaveClass('desktop:flex');
+    expect(ctaContainer).toHaveClass('desktop:!flex');
 
     // 3. Check Mobile Menu Toggle Button
     // className="flex desktop:hidden text-white"
     const mobileButton = screen.getByRole('button');
     expect(mobileButton).toHaveClass('flex');
-    expect(mobileButton).toHaveClass('desktop:hidden');
+    expect(mobileButton).toHaveClass('desktop:!hidden');
   });
 });
