@@ -10,6 +10,15 @@ module.exports = {
       screens: {
         'desktop': '768px',
       },
+      animation: {
+        marquee: 'marquee 25s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
       colors: {
         'w-green': '#76B900',
         'w-dark': '#000000',
